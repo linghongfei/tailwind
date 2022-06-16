@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+  .btn{
+    @apply
+    inline-block
+    rounded
+    text-14
+    px-4
+    py-1
+    border
+  }
+  /** 主按钮 */
+  .btn-primary{
+    @apply
+    text-white
+    bg-blue-6
+    border-blue-6	
+  }
+  /** 危险按钮 */
+  .btn-danger{
+    @apply
+    text-white
+    bg-red-5
+    border-red-5
+  }
+  .btn-danger-default{
+    @apply
+    text-red-5
+    bg-white
+  }
+  /** 失效按钮 */
+  .btn-disable{
+    @apply
+    text-black-5
+    bg-black-2
+    border-black-4
+    hover:cursor-no-drop
+  }
+  /** 次要按 */
+  .btn-secondary{
+    @apply
+    text-black-7
+    bg-white
+    border-black-4
+  }
+  /** 虚框按钮 */
+  .btn-dashed{
+    @apply
+    border-dashed
+    text-black-7
+    bg-white
+    border-black-4
+  }
+  /** btn-ghost */
+  .btn-ghost{
+    @apply
+    text-black-7
+    bg-transparent
+    border-black-5
+  }
+  /** 小按钮 */
+  .btn-sm{
+    @apply
+    text-14
+    px-2
+    py-0
+  }
+  /** 大按钮 */
+  .btn-bg{
+    @apply
+    text-16
+    px-4
+    py-2
+  }
+}
