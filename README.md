@@ -6,4 +6,9 @@
 ### package.json
 ### tailwind.config.js
 
+```
+//执行命令 添加资源文件
+npm install -D tailwindcss
+npx tailwindcss init
+```
 > 执行命令 npm run build
