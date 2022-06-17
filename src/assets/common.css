@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* 按钮样式 */
 @layer components{
   .btn{
     @apply
@@ -34,32 +36,32 @@
   /** 失效按钮 */
   .btn-disable{
     @apply
-    text-black-5
-    bg-black-2
-    border-black-4
+    text-black-percent-25
+    bg-black-percent-4
+    border-black-percent-15
     hover:cursor-no-drop
   }
   /** 次要按 */
   .btn-secondary{
     @apply
-    text-black-7
+    text-black-percent-65
     bg-white
-    border-black-4
+    border-black-percent-15
   }
   /** 虚框按钮 */
   .btn-dashed{
     @apply
     border-dashed
-    text-black-7
+    text-black-percent-65
     bg-white
-    border-black-4
+    border-black-percent-15
   }
   /** btn-ghost */
   .btn-ghost{
     @apply
-    text-black-7
+    text-black-percent-65
     bg-transparent
-    border-black-5
+    border-black-percent-25
   }
   /** 小按钮 */
   .btn-sm{
