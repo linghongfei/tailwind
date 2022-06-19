@@ -42,8 +42,16 @@ module.exports = {
     screens: {
       'sm': {'max': '750px'},
       'md': {'min': '751px', 'max': '1024px'},
-      'lg': {'min': '1025px', 'max': '1920px'},
-      'xl': {'min': '1920px'},
+      'lg': {'min': '1025px', 'max': '1440px'},
+      'xl': {'min': '1441px'},
+    },
+    container: {
+      screens: {
+        'sm': '620px',
+        'md': '920px',
+        'lg': '1220px',
+        'xl': '1520px'
+      }
     },
   },
   plugins: [],
