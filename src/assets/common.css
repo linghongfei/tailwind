@@ -56,12 +56,12 @@
     bg-white
     border-black-percent-15
   }
-  /** btn-ghost */
+  /** 幽灵按钮 */
   .btn-ghost{
     @apply
     text-black-percent-65
     bg-transparent
-    border-black-percent-25
+    border-white-opacity-20
   }
   /** 小按钮 */
   .btn-sm{

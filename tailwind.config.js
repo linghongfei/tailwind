@@ -32,11 +32,16 @@ module.exports = {
         },
         'green-6': '#52C41A',
         'gold-6': '#FAAD14',
-        'red-5': '#FF4D4F'
+        'red-5': '#FF4D4F',
+        'white-opacity-20': 'rgba(255, 255, 255, 0.2)'
       },
       fontSize: {
+        '12': '12px',
         '14': '14px',
         '16': '16px',
+        '18': '18px',
+        '24': '24px',
+        '20': '20px',
       }
     },
     screens: {
