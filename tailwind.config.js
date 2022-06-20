@@ -19,6 +19,10 @@ module.exports = {
           9: '#092982',
           10: '#061A5C',
         },
+        'yellow': {
+          1: '#FFFBE6',
+          2: '#FFE58F'
+        },
         'black-percent': {
           2: '#FAFAFA',
           4: '#F5F5F5',
@@ -46,8 +50,8 @@ module.exports = {
     },
     screens: {
       'sm': {'max': '750px'},
-      'md': {'min': '751px', 'max': '1024px'},
-      'lg': {'min': '1025px', 'max': '1440px'},
+      'md': {'max': '1024px'},
+      'lg': {'max': '1440px'},
       'xl': {'min': '1441px'},
     },
     container: {
