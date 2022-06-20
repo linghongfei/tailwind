@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button按钮</title>
+    <link href="../../dist/output.css" rel="stylesheet">
+    <link href="./css/select.css" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="p-16">
+        <h2 class="text-2xl">下拉框</h2>
+        <div class="">
+            <div>
+                <div class="w-40 mt-3">
+                    <select id="header-select" class="opacity-0" name="" id="">
+                    </select>
+                </div>
+                <div class="mt-6"> 
+                    <h2 class="text-xl mb-3">使用方法</h2>
+                    <p>$.fn.jQuerySelect({</p>
+                    <p class="pl-8">id:'header-select', //id 必传</p>
+                    <p class="pl-8">data:option, //data 可为空</p>
+                    <p class="pl-8">onSelect: function (val,name) { //非必传</p>
+                    <p class="pl-8">console.log(val,name)</p>
+                    <p class="pl-6">},</p>
+                    <p> })</p>
+                </div>
+            </div>
+        </div>
+        <h2 class="text-2xl mt-6">弹框</h2>
+        <div class="mt-3">
+            <button class="btn btn-primary btn-bg">点我快点我</button>
+        </div>
+    </div>
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script src="./js/public.js"></script>
+    <script>
+        $(function () {
+            function test(val, name) {
+                console.log(val, name)
+            }
+            //下拉调用方法
+            var option = [{
+                    "label": "会的",
+                    "value": "11231"
+                },
+                {
+                    "label": "一定会的",
+                    "value": "1234"
+                },
+                {
+                    "label": "必须的呀",
+                    "value": "1234"
+                },
+                {
+                    "label": "那是肯定的",
+                    "value": "1236"
+                },
+            ]; //数据
+            // "header-select",option,test
+            $.fn.jQuerySelect({
+                id: 'header-select',
+                data: option,
+                onSelect: function (val, name) {
+                    console.log(val, name)
+                },
+            })
+            // $("#header-select1").jQuerySelect("header-select1",option,test)
+
+            //弹框调用方法
+            $(".btn-primary").click(function () {
+                var param = {
+                    title: '提示框', //默认 提示框
+                    width:"60%",
+                    height:"400px",
+                    content: `<p style="color:red">我们会好好的吗1111？</p>`
+                    +`<div class="w-40 mt-3">`
+                    +`<select id="header-select1" class="opacity-0" name="" id="">`
+                    +`</select>`
+                    +`</div>`,
+                    innerHTML: true, //false  不支持标签,true 支持标签 默认是false
+                    confirm: function () {
+                        console.log("确认提交")
+                    },
+                    cancel: function () {
+                        console.log("取消提交")
+                    }
+                };
+                $.fn.toolTip(param);
+                $.fn.jQuerySelect({
+                    id: 'header-select1',
+                    data: option,
+                    onSelect: function (val, name) {
+                        console.log(val, name)
+                    },
+                })
+            });
+
+        })
+    </script>
+</body>
+
+</html>
