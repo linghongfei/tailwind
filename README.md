@@ -17,3 +17,9 @@
     |──package.json          
     |──tailwind.config.js      tailwind相关配置   
 
+## 命名规则
+    |──文件名使用驼峰命名   
+        |──如:noData    
+    |──图片使用中划线 "-"     
+        |──如:no-data     
+
