@@ -34,10 +34,13 @@ module.exports = {
           85: '#262626',
           100: '#000000',
         },
+        'gray':{
+          5: '#F5F7FA'
+        },
         'green-6': '#52C41A',
         'gold-6': '#FAAD14',
         'red-5': '#FF4D4F',
-        'gray':"#F5F7FA",       
+      
         'white-opacity-20': 'rgba(255, 255, 255, 0.2)'
       },
       fontSize: {
