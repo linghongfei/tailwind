@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind containerBg;
+@tailwind line;
 
 @layer base{
   input{
@@ -82,6 +84,16 @@
     px-4
     py-2
   }
+
+  /* 10%透明淡蓝色按钮 */
+  .btn-primary-opacity-10{
+    @apply
+    bg-blue-6 
+    bg-opacity-10 
+    text-blue-6
+    border-blue-6
+    border-opacity-10 
+  }
 }
 
 /** header头部 */
@@ -91,5 +103,25 @@
   }
   .bg-white-opacity-15{
     background-color: rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* 容器背景色 */
+@layer containerBg{
+  /* 淡黄色加边框 */
+  .container-yellow{
+    @apply
+    bg-yellow-1 
+    border 
+    border-yellow-2
+  }
+}
+
+/* 下边框线 --分割线*/
+@layer line{
+  .border-bc8{
+    @apply
+    border-b 
+    border-black-percent-8
   }
 }
