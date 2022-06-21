@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button按钮</title>
+    <link href="../../dist/output.css" rel="stylesheet">
+    <link href="./css/select.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/tabs.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="p-16">
+        <h2 class="text-2xl">下拉框</h2>
+        <div class="">
+            <div>
+                <div class="w-40 mt-3">
+                    <select id="header-select" class="opacity-0" name="" id="">
+                    </select>
+                </div>
+            </div>
+        </div>
+        <h2 class="text-2xl mt-6">弹框</h2>
+        <div class="mt-3">
+            <button class="btn btn-primary btn-bg">点我快点我</button>
+        </div>
+        <h2 class="text-2xl mt-6">tabs</h2>
+        <div class="mt-3">
+            <div class="public-tab" id="public-tab-1">
+                <div label="弹框">
+                    <h2 class="text-xl mb-3">弹框使用方法</h2>
+                    <p>$(".btn-primary").click(function () {//需要触发事件</p>
+                    <p class="pl-4"> var param = {//自定义参数名</p>
+                    <p class="pl-8"> title: '提示框', //默认title 提示框</p>
+                    <p class="pl-8"> width: "60%",//百分比  数值都可以</p>
+                    <p class="pl-8"> height: "400px",//百分比  数值都可以</p>
+                    <p class="pl-8"> content: `我们会好好的吗？`,//可以是拼接的标签</p>
+                    <p class="pl-8"> innerHTML: true, //false 不支持标签,true 支持标签 默认是false</p>
+                    <p class="pl-8"> confirm: function () {},//确认事件</p>
+                    <p class="pl-8"> cancel: function () {},//取消事件</p>
+                    <p class="pl-4"> };</p>
+                    <p class="pl-4">$.fn.toolTip(param);//初始化方法</p>
+                    <p>});</p>
+                </div>
+                <div label="下拉框">
+                    <div>
+                        <div class="">
+                            <div>
+                                <div class="mt-6">
+                                    <h2 class="text-xl mb-3">下拉框使用方法</h2>
+                                    <p>$.fn.jQuerySelect({</p>
+                                    <p class="pl-8">id:'header-select', //id 必传</p>
+                                    <p class="pl-8">data:option, //data 可为空</p>
+                                    <p class="pl-8">onSelect: function (val,name) { //非必传 可通过$(id).val()获取内容</p>
+                                    <p class="pl-10">console.log(val,name)//选择的选项</p>
+                                    <p class="pl-6">},</p>
+                                    <p> })</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div label="tabs">
+                    <div>
+                        <div class="">
+                            <div>
+                                <div class="mt-6">
+                                    <h2 class="text-xl mb-3">tabs使用方法</h2>
+                                    <p>$.fn.tabs({</p>
+                                    <p class="pl-8">id: 'public-tab-1', //id 必传</p>
+                                    <p class="pl-8">selected: '下拉框', //设置默认选中项，非必传，默认选中第一个</p>
+                                    <p class="pl-8">onSelect: function (val) {, //切换回调事件</p>
+                                    <p class="pl-10">console.log(val)</p>
+                                    <p class="pl-6">},</p>
+                                    <p> })</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script src="./js/public.js"></script>
+    <script>
+        $(function () {
+            //tabs
+            $.fn.tabs({
+                id: 'public-tab-1',
+                selected: '下拉框',
+                onSelect: function (val) {
+                    console.log('tabs当前选中项==============='+val)
+                },
+            })
+            //下拉调用方法
+            var option = [{
+                    "label": "会的",
+                    "value": "11231"
+                },
+                {
+                    "label": "一定会的",
+                    "value": "1234"
+                },
+                {
+                    "label": "必须的呀",
+                    "value": "1234"
+                },
+                {
+                    "label": "那是肯定的",
+                    "value": "1236"
+                },
+            ]; //数据
+
+            $.fn.jQuerySelect({
+                id: 'header-select',
+                data: option,
+                onSelect: function (val, name) {
+                    console.log(val, name)
+                },
+            })
+
+            //弹框调用方法
+            $(".btn-primary").click(function () {
+                var param = {
+                    title: '提示框', //默认 提示框
+                    width: "60%",
+                    height: "400px",
+                    content: `<p style="color:red">我们会好好的吗1111？</p>` +
+                        `<div class="w-40 mt-3">` +
+                        `<select id="header-select1" class="opacity-0" name="" id="">` +
+                        `</select>` +
+                        `</div>`,
+                    innerHTML: true, //false  不支持标签,true 支持标签 默认是false
+                    confirm: function () {
+                        console.log("确认提交")
+                    },
+                    cancel: function () {
+                        console.log("取消提交")
+                    }
+                };
+                $.fn.toolTip(param);
+                $.fn.jQuerySelect({
+                    id: 'header-select1',
+                    data: option,
+                    onSelect: function (val, name) {
+                        console.log(val, name)
+                    },
+                })
+            });
+
+        })
+    </script>
+</body>
+
+</html>
