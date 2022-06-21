@@ -47,6 +47,9 @@ module.exports = {
         '18': '18px',
         '24': '24px',
         '20': '20px',
+      },
+      spacing: {
+        '25': '100px'
       }
     },
     screens: {
