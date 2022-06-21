@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link href="../../dist/output.css" rel="stylesheet">
+</head>
+<body>
+    <div class="flex flex-col items-center h-screen w-full relative bg-gray md:bg-white">
+        <div class="flex h-screen w-full items-center md:items-stretch">
+            <div class="font-normal text-black-percent-100 bg-white w-120 h-150 mx-auto rounded-xl shadow-lg px-14 leading-5.5 md:w-full md:px-5 md:shadow-none">
+                <div class=" w-full text-center pb-10 pt-7.5  md:py-7.5">
+                    <img src="../assets/img/logo-lg@2x.png" alt="" class="inline-block w-50 md:w-40">
+                </div>
+                <form class="" action="/" method="post">
+                    <div class="flex flex-col mb-4">
+                         <input class="rounded border box-border py-3 px-4  border-black-percent-15" type="email"  placeholder="邮箱">
+                    </div>
+                    <div class="flex flex-col mb-4">
+                        <input class="rounded border box-border py-3 px-4  border-black-percent-15" type="password"  placeholder="密码">
+                    </div>
+                    <div class="flex justify-between relative items-center leading-5.5">
+                        <img src="../assets/img/right-tip@2x.png" alt="" class="w-3.5 h-3.5 absolute left-58 md:left-50">
+                        <input type="text" placeholder="验证码" class="rounded-sm border box-border py-3 pl-4 pr-8 border-black-percent-15 w-64.5 md:w-56.25">
+                        <button class="border rounded-sm  box-border  border-black-percent-15 px-3.75 text-14 py-3">获取验证码</button>
+                    </div>
+                    <div class="flex flex-col mt-5 text-14 leading-5.5">
+                        <label class="flex  items-center mb-3">
+                            <input type="checkbox" class="mr-2 w-4 h-4  border-black-percent-15 align-middle">
+                            <span class="align-middle">接受<a href="#" class="text-blue-6">《服务条款》</a>和<a href="#"  class="text-blue-6">《隐私政策》</a>
+                            </span>
+                        </label> 
+                        <label class="flex  items-center">
+                            <input type="checkbox" class="mr-2 w-4 h-4  border-black-percent-15 align-middle">
+                            <span class="align-middle">接收最新优惠信息到我的邮箱</span>
+                        </label>     
+                    </div>
+                    
+                    <button class="w-full btn btn-primary py-3 text-16 mt-7.5 mb-4 font-medium ">注 册</button>
+                </form>
+                <div class="flex items-center justify-center text-16">
+                  已经有账户了？<a href="#" class="text-blue-6">登录</a>
+                </div>
+               
+            </div>
+        </div>
+        <div class="text-center text-12 mb-7.5 leading-4 md:hidden ">
+            <p class="mb-1.25">使用本网站即表示同意《服务条款》及《隐私政策》</p>
+            <p>网站内所有游戏版权、商标、服务商标均归相应的版权者所有</p>
+        </div>  
+    </div>
+</body>
+</html>
