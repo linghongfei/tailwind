@@ -151,6 +151,74 @@
                     $('.confirmkuang').remove()
                 }, 400)
             })
+        },
+        //tabs
+        tabs:function(param){
+            let ID = "#" + param.id;
+            let tabHeaderArr=[];
+            let tabHeaderLab=`<div class='public-tabs-header h-10 mb-4'>`
+                                +`<div class='public-tabs-nav-scroll'>`
+                                    +`<div class='public-tabs-nav' role='tablist' style='transform: translateX(0px);'>`
+                                       +`<div class='public-tabs-active-bar' style='transform: translateX(0px)'></div>`;
+            let tabHBodyLab=`<div class='public-tabs-body'>`;
+            $(ID).children("div[label]").map((num,label)=>{
+                tabHeaderArr.push({
+                    name:$(label).attr("label"),
+                    class:'tab-'+num,
+                    label:$(label).html(),
+                    id:`tab-${num}`,
+                    barWidth:0,
+                    barLeft:0
+                });
+                tabHeaderLab += `<div id='tab-${num}' index='${num}' aria-controls='pane-${num}' role='tab'`
+                    +`class='cursor-pointer public-tabs-item ${param.selected?param.selected==$(label).attr("label")?'is-active':'':num==0?'is-active':''}'>`
+                    +`${$(label).attr("label")}</div>`;
+                tabHBodyLab += `<div id='pane-${num}' `
+                         +`style='display:${param.selected?param.selected==$(label).attr("label")?'block':'none':num==0?'block':'none'}' >`
+                         +`${$(label).html()}</div>`;
+            });
+            tabHeaderLab += `</div></div></div>`;
+            tabHBodyLab += `</div>`;
+
+            $(ID).html(tabHeaderLab+=tabHBodyLab);
+            //计算移动位置
+            tabHeaderArr.map((item,num)=>{
+                tabHeaderArr[num].barWidth = $("#"+item.id).width();
+                let barLeft=0;
+                if(num==0){
+                    barLeft=0;
+                    tabHeaderArr[num].barLeft = barLeft;
+                }else{
+                    tabHeaderArr.map((val,index)=>{
+                        if(index<num){
+                            barLeft+= $("#tab-"+index).innerWidth();
+                        }
+                    })
+                    tabHeaderArr[num].barLeft = barLeft+20;
+                }
+                
+            });
+            
+            $(ID).find("div.public-tabs-active-bar").css({
+                "transform": `translateX(${tabHeaderArr[Number($(ID).find("div.public-tabs-item.is-active").attr("index"))].barLeft}px)`,
+                "width":`${tabHeaderArr[Number($(ID).find("div.public-tabs-item.is-active").attr("index"))].barWidth}px`
+            })
+            if(jQuery.type(param.onSelect) === 'function'){
+                param.onSelect(param.selected?param.selected:tabHeaderArr[0].name)
+            }
+            //切换
+            $(ID).on("click",".public-tabs-item",function(){
+                $(this).addClass("is-active").siblings("div").removeClass("is-active");
+                $("#"+$(this).attr("aria-controls")).css("display",'block').siblings("div").css("display",'none');
+                $(this).siblings("div.public-tabs-active-bar").css({
+                    "transform": `translateX(${tabHeaderArr[Number($(this).attr("index"))].barLeft}px)`,
+                    "width":`${tabHeaderArr[Number($(this).attr("index"))].barWidth}px`
+                })
+                if(jQuery.type(param.onSelect) === 'function'){
+                    param.onSelect($(this).text())
+                }
+            })
         }
+
     });
 })(jQuery);
