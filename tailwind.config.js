@@ -18,15 +18,18 @@ module.exports = {
           8: '#235CCF',
           9: '#092982',
           10: '#061A5C',
+          11: '#EAF1FE',
         },
         'yellow': {
           1: '#FFFBE6',
-          2: '#FFE58F'
+          2: '#FFE58F',
+          3: '#EF792B'
         },
         'black-percent': {
           2: '#FAFAFA',
           4: '#F5F5F5',
           6: '#F0F0F0',
+          8: '#E8E8E8',
           15: '#D9D9D9',
           25: '#BFBFBF',
           45: '#8C8C8C',
@@ -34,6 +37,7 @@ module.exports = {
           85: '#262626',
           100: '#000000',
         },
+        'body':'#F5F7FA', //body背景色
         'green-6': '#52C41A',
         'gold-6': '#FAAD14',
         'red-5': '#FF4D4F',
@@ -46,8 +50,8 @@ module.exports = {
         '15': '15px',
         '16': '16px',
         '18': '18px',
-        '24': '24px',
         '20': '20px',
+        '24': '24px',
       },
       spacing: {
         '1.25':'0.3125rem',//5px
