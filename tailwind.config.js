@@ -78,9 +78,11 @@ module.exports = {
     },
     screens: {
       'sm': {'max': '750px'},
-      'md': {'max': '1024px'},
-      'lg': {'max': '1440px'},
+      'md': {'min': '751px', 'max': '1024px'},
+      'lg': {'min': '1025px', 'max':'1440px'},
       'xl': {'min': '1441px'},
+      'hw': {'max': '1024px'},  //区分h5和web两种布局
+      'wh': {'min': '1025px'},  //区分h5和web两种布局
     },
     container: {
       screens: {
