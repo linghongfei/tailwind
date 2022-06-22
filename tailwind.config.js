@@ -40,7 +40,6 @@ module.exports = {
         'green-6': '#52C41A',
         'gold-6': '#FAAD14',
         'red-5': '#FF4D4F',
-      
         'white-opacity-20': 'rgba(255, 255, 255, 0.2)'
       },
       fontSize: {
@@ -50,6 +49,7 @@ module.exports = {
         '18': '18px',
         '24': '24px',
         '20': '20px',
+        '40': '40px',
       },
       spacing: {
         '1.25':'0.3125rem',//5px
@@ -62,13 +62,16 @@ module.exports = {
         '56.25':'14.0625rem',//225px
         '58':'14.5rem',//232px
         '64.5':'16.125rem',//258px
+        '90':'22.5rem',//360px
         '120':'30rem',//480px
         '150':'37.5rem',//600px
         '295':'73.75rem',//1180px
+        '360':'90rem',//1440px
       },
       lineHeight: {
         '3.5': '0.875rem',//14px
         '5.5': '1.375rem',//22px
+        '14': '3.5rem',//56px
       },
       boxShadow: {
         'lg': '0px 2px 20px 0px rgba(208, 208, 209, 0.24)',
